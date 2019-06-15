@@ -1,0 +1,41 @@
+# Configuration for Release Drafter: https://github.com/toolmantim/release-drafter
+name-template: $NEXT_PATCH_VERSION
+tag-template: $NEXT_PATCH_VERSION
+# Semver by default: https://semver.org/
+version-template: $MAJOR.$MINOR.$PATCH
+
+# Emoji reference: https://gitmoji.carloscuesta.me/
+categories:
+  - title: 🚨 Removed
+    label: removed
+  - title: ⚠️ Deprecated
+    label: deprecated
+  - title: 🚀 New features and improvements
+    label: enhancement
+  - title: 🐛 Bug Fixes
+    label: bug
+  - title: 📝 Documentation updates
+    label: documentation
+  # Default label used by Dependabot
+  - title: 📦 Dependency updates
+    label: dependencies
+  - title: 👻 Maintenance
+    label: chore
+  # TODO: consider merging category or changing emojis
+  - title: 🚚 Internal changes
+    label: internal
+  - title: 🚦 Tests
+    label: test
+exclude-labels:
+  - reverted
+  - skip-changelog
+  - invalid
+
+template: |
+  <!--Add a release summary here-->
+  
+  $CHANGES
+replacers:
+  - search: 'LCCI'
+    replace: 'LibreCores CI'
+  
